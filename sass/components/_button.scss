@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+
+%serch-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 3px 3px;
+  background: #f15d0ed5;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  transition: $transition;
+
+  z-index: $z-index-300;
+
+  &:active {
+    transform: translateY(2px);
+    scale: 0.96;
+  }
+
+  &:hover {
+    background: #22222284;
+  }
+}
+
+
+.weather-app form button {
+  @extend %serch-btn;
+}

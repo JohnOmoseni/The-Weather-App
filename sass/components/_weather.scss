@@ -1,0 +1,199 @@
+@use '../abstracts/' as *;
+
+.container {
+   transition: all 0.3s linear;
+   @include bg-image(url('/images/day/mist.jpeg'));
+
+
+   &:has(.loading) {
+      @include bg-image(url('/images/loading-bg.jpg'));
+   }
+
+   .loading {
+      @include flex-column($align: center);
+      gap: $pad-400;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+
+      span {
+         color: #aeead3;
+         letter-spacing: 1px;
+         font-weight: $fw-bold;
+         text-shadow: $ts-200;
+      }
+   }
+
+   .column {
+      @include flex-column;
+      justify-content: space-between;
+      padding: 2em 3em;
+      width: 60%;
+      height: 100%;
+   }
+
+   .title {
+      letter-spacing: $ls-100;
+      line-height: 1.2;
+      font-size: 0.9rem;
+      color: var(--text-white);
+   }
+
+   .weather-info {
+      display: grid;
+      grid-template-columns: max-content auto auto;
+      gap: $pad-500;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+
+      .temp {
+         font-size: 6rem;
+         color: var(--text-white);
+         word-spacing: -16px;
+         margin-top: 5px;
+      }
+
+      .city-date {
+         overflow: hidden;
+
+         h1 {
+            font-size: $fs-500;
+            letter-spacing: $ls-100;
+            line-height: 1.3;
+            text-transform: capitalize;
+            text-shadow: $ts-200;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: var(--text-white);
+         }
+
+         .region-date {
+            * {
+               font-size: $fs-small-text;
+               font-weight: $fw-semi-bold;
+               display: inline-block;
+               text-shadow: $ts-100;
+            }
+
+            .region {
+               letter-spacing: 1px;
+               color: #888;
+               margin-top: -10px;
+            }
+
+            .time {
+               font-size: 0.8rem;
+               padding-top: 0.5em;
+               letter-spacing: 1px;
+               color: #bbb;
+            }
+         }
+      }
+
+      .weather {
+         @include flex-column($align: center);
+         gap: 0.3em;
+
+         .weather-icon {
+            width: 60px;
+            height: 60px;
+         }
+
+         .condition {
+            font-size: 0.9rem;
+            letter-spacing: $ls-100;
+            text-shadow: $ts-100;
+         }
+
+      }
+   }
+
+   .weather-panel {
+      padding: 3em 2em 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      border: 1px solid rgba(rgb(162, 162, 162), 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 30;
+      overflow: hidden scroll;
+      box-shadow: -2px 0px 30px rgba(black, 0.5);
+
+      form {
+
+         .search-input {
+            border-bottom: 1px solid var(--text-grey-200);
+            padding: 0 1em 0.5em 0;
+            width: 85%;
+            color: #bbb;
+            font-size: 1.08rem;
+
+            &::placeholder {
+               color: var(--text-grey);
+               font-size: 0.95rem;
+               text-shadow: $ts-100;
+            }
+         }
+
+      }
+
+      ul {
+         color: var(--text-white-variant);
+         margin: $pad-600 0;
+
+         &:not(:last-of-type) {
+            border-bottom: 1px solid var(--text-grey-200);
+
+         }
+
+         h3 {
+            margin: $pad-600 0;
+            font-size: $fs-300;
+            letter-spacing: 1px;
+            color: var(--text-white-variant);
+            text-shadow: $ts-100;
+         }
+
+         li {
+            margin: $pad-500 0;
+            letter-spacing: $ls-100;
+            text-shadow: $ts-100;
+         }
+
+         li.city {
+            cursor: pointer;
+            width: max-content;
+            font-weight: bold;
+
+            &:hover {
+               color: var(--text-white);
+            }
+         }
+
+         &.weather-details li {
+            @include flex-row();
+            justify-content: space-between;
+         }
+      }
+
+      &::-webkit-scrollbar {
+         width: 5px;
+         height: 100%;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: #3c3b3bc4;
+         border-radius: 12px;
+      }
+
+      &::-webkit-scrollbar-track {
+         background: rgba(black, 0.2);
+      }
+   }
+}

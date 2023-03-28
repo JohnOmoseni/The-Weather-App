@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'GtWalsheima';
+  src: url('/assets/fonts/GTWalsheimPro-Black.ttf');
+}
+
+
+// Font-Family
+$ff-family: "Poppins", Arial, sans-serif;
+$ff-body: "Poppins", Arial, sans-serif;
+$ff-variant: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+
+// Font-Weight
+$fw-regular: 300;
+$fw-semi-bold: 600;
+$fw-bold: 800;
+
+// Font-Size
+$fs-100: 0.8rem;
+$fs-200: 1rem;
+$fs-300: 1.2rem;
+$fs-350: 1.5rem;
+$fs-400: 2.5rem;
+$fs-500: 3rem;
+$fs-600: 50px;
+
+$fs-small-text: $fs-100;
+$fs-body: $fs-200;

@@ -1,0 +1,33 @@
+@use "../abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: $fw-regular;
+  font-family: $ff-body;
+  font-size: $fs-body;
+  color: var(--text-white-variant)
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font: inherit;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+ul li {
+  list-style-type: none;
+  display: list-item;
+}
