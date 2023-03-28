@@ -30,6 +30,7 @@ export function dayOfTheWeek(date) {
   const year = y.toString().substr(-2);
   return `${weekdays[new Date(`${d}/${m}/${y}`).getDay()]}  ${d}, ${months[m - 1]} '${y}`;
 }
+
 export const formatTime = time => {
   return time < 10 ? `0${time}` : time;
 };
@@ -65,7 +66,6 @@ addToMap([1114, 1117, 1135, 1147, 1168], {
   day: "#363d43",
   night: "#363d43",
 });
-
 addToMap(
   [
     1063, 1069, 1072, 1150, 1153, 1180, 1183, 1186, 1189, 1192, 1195, 1204, 1207, 1240, 1243, 1246,
