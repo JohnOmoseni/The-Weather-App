@@ -1,12 +1,22 @@
 @font-face {
-  font-family: 'GtWalsheima';
-  src: url('/assets/fonts/GTWalsheimPro-Black.ttf');
+  font-family: 'Poppins';
+  src: url('/Poppins-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Monteserrat';
+  src: url('/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  src: url('/SF-Mono-Medium.ttf');
+}
 
 // Font-Family
 $ff-family: "Poppins", Arial, sans-serif;
 $ff-body: "Poppins", Arial, sans-serif;
+$ff-header: "Monteserrat", Arial, sans-serif;
 $ff-variant: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 
 // Font-Weight

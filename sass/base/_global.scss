@@ -5,6 +5,30 @@ body {
   height: 100vh;
   position: relative;
   z-index: 1;
+  transition: all 0.3s linear;
+  @include bg-image(url('/images/night/rainy.jpeg'));
+
+}
+
+body:has(.loading) {
+  background-image: url('/images/loading-bg.jpg') !important;
+}
+
+.loading {
+  @include flex-column($align: center);
+  gap: $pad-400;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+
+  span {
+    color: #aeead3;
+    letter-spacing: 1px;
+    font-weight: $fw-bold;
+    text-shadow: $ts-200;
+    user-select: none;
+  }
 }
 
 .weather-app {
@@ -16,6 +40,7 @@ body {
   height: 100vh;
   margin: 0 auto;
   position: relative;
+  isolation: isolate;
   overflow: hidden;
 }
 

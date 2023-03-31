@@ -18,13 +18,15 @@ function WeatherInfo({ cityTitle, weatherData }) {
   const getTime = `${formatTime(hours)}:${formatTime(mins)}`;
 
   const iconId = data?.condition?.icon?.substr("//cdn.weatherapi.com/weather/64x64/".length);
-  const iconSrc = `/icons/day/${data ? iconId : "113.png"}`;
+  const iconSrc = `/icons/${data ? iconId : "113.png"}`;
 
   return (
     <div className="weather-info">
       <h1 className="temp">{temp ? temp : "25"} &deg;</h1>
       <div className="city-date">
-        <h1 className="city">{cityTitle}</h1>
+        <h1 className="city" title={cityTitle}>
+          {cityTitle}
+        </h1>
         <div className="region-date">
           <p className="region">{`${country ? country : "Nigeria"}, ${
             continent ? continent : "Africa"

@@ -16,8 +16,9 @@ function WeatherApp() {
   const btnRef = useRef();
 
   useEffect(() => {
+    console.log("fetching data");
     const fetchWeatherData = async () => {
-      const url = `${currentUrl}?key=5cc1d7ab52834234a2e24846232702&q=Lagos`;
+      const url = `${currentUrl}?key=5cc1d7ab52834234a2e24846232702&q=${cityTitle}`;
 
       try {
         const response = await fetch(url);
@@ -35,7 +36,7 @@ function WeatherApp() {
 
         if (!storedData) {
           console.log(error);
-          alert("Something went wrong fam 😢. Check your connection and try again");
+          alert("Something went wrong fam 😢. Please try again");
         } else {
           setWeatherData(storedData);
         }
@@ -47,18 +48,20 @@ function WeatherApp() {
   }, [cityTitle]);
 
   useEffect(() => {
-    if (weatherData.length > 0) {
+    if (weatherData) {
       const code = weatherData?.current?.condition?.code;
       const imgSrc = getImageUrl(timeOfDay, code);
       let obj = IMG_MAP.get(code);
 
-      let btnClr = obj ? IMG_MAP.get(code)[timeOfDay] : "#363d43";
+      let btnClr = obj ? IMG_MAP.get(code)[timeOfDay] : "#f73a21";
 
       console.log(getImageUrl(timeOfDay, code), code, btnClr, IMG_MAP.get(code));
       document.body.style.backgroundImage = `url(${imgSrc})`;
-      btnRef.current.style.background = btnClr;
+      if (btnRef.current) {
+        btnRef.current.style.background = btnClr;
+      }
     }
-  }, [cityTitle, weatherData]);
+  }, [cityTitle, weatherData, btnRef.current]);
 
   return (
     <div className="container">

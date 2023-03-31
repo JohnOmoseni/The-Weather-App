@@ -65,7 +65,11 @@ function WeatherPanel({ cityInput, setCityInput, setCityTitle, weatherData, btnR
         </ul>
         <ul className="weather-details">
           <h3>Weather Details</h3>
-          <WeatherDetails title="Cloudy" className="cloudy" value={`${cloud ? cloud : "_"}%`} />
+          <WeatherDetails
+            title="Cloudy"
+            className="cloudy"
+            value={`${cloud ? cloud : cloud == 0 ? 0 : "_"}%`}
+          />
           <WeatherDetails
             title="Humidity"
             className="humid"

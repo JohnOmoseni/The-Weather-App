@@ -15,8 +15,8 @@ export function dayOfTheWeek(date) {
     "Dec",
   ];
 
+  const currDate = new Date();
   if (!date) {
-    const currDate = new Date();
     let y = currDate.getFullYear();
     let m = currDate.getMonth() + 1;
     let d = currDate.getDate();
@@ -28,7 +28,8 @@ export function dayOfTheWeek(date) {
   const m = parseInt(date?.substr(5, 2));
   const d = parseInt(date?.substr(8, 2));
   const year = y.toString().substr(-2);
-  return `${weekdays[new Date(`${d}/${m}/${y}`).getDay()]}  ${d}, ${months[m - 1]} '${y}`;
+
+  return `${weekdays[currDate.getDay()]}  ${d}, ${months[m - 1]} '${y}`;
 }
 
 export const formatTime = time => {

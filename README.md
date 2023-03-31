@@ -11,7 +11,7 @@ To use this app, you will need to have the following
 - An internet connection
 - A web browser that supports HTML, CSS and Javascript.
 
-You can access the webapp by visiitng the [URL](https://) where it is hosted. Alternatively, you can download the source code and host it on your local machine or a web server
+You can access the webapp by visiitng the [link](https://weatherapp-ashen-six.vercel.app) where it is hosted. Alternatively, you can download the source code and host it on your local machine or a web server
 
 ### Pre-requisites
 
