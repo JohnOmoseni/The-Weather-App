@@ -4,7 +4,7 @@ function Loading() {
   return (
     <div className="loading">
       <span>
-        <MagicSpinner color="#14f39e" size={60} />
+        <MagicSpinner color="#f52d55" size={80} />
       </span>
       <span>Loading....</span>
     </div>

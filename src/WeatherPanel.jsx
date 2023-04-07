@@ -29,8 +29,8 @@ function WeatherPanel({ cityInput, setCityInput, setCityTitle, weatherData, btnR
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!cityInput) {
-      alert("You need to enter a search value");
+    if (!cityInput || !isNaN(cityInput)) {
+      alert("You need to enter valid city fam!");
       return;
     }
     setCityTitle(cityInput);

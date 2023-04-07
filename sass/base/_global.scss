@@ -10,10 +10,6 @@ body {
 
 }
 
-body:has(.loading) {
-  background-image: url('/images/loading-bg.jpg') !important;
-}
-
 .loading {
   @include flex-column($align: center);
   gap: $pad-400;

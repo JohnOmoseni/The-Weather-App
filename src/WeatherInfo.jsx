@@ -1,7 +1,6 @@
 import { dayOfTheWeek, formatTime } from "./utilities";
 
 function WeatherInfo({ cityTitle, weatherData }) {
-  console.log(weatherData);
   const currDate = new Date();
   const hours = currDate.getHours();
   const mins = currDate.getMinutes();

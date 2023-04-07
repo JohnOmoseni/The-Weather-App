@@ -29,17 +29,8 @@ function WeatherApp() {
           setTimeOfDay("night");
         }
         setWeatherData(data);
-        localStorage.setItem("weather-data", JSON.stringify(data));
-        console.log(data);
       } catch (error) {
-        const storedData = localStorage.getItem("weather-data");
-
-        if (!storedData) {
-          console.log(error);
-          alert("Something went wrong fam 😢. Please try again");
-        } else {
-          setWeatherData(storedData);
-        }
+        alert("Something went wrong fam 😢. Please try again");
       }
       setIsLoading(false);
     };
@@ -48,18 +39,15 @@ function WeatherApp() {
   }, [cityTitle]);
 
   useEffect(() => {
-    if (weatherData) {
-      const code = weatherData?.current?.condition?.code;
-      const imgSrc = getImageUrl(timeOfDay, code);
-      let obj = IMG_MAP.get(code);
+    const code = weatherData?.current?.condition?.code;
+    const imgSrc = getImageUrl(timeOfDay, code);
+    let obj = IMG_MAP.get(code);
 
-      let btnClr = obj ? IMG_MAP.get(code)[timeOfDay] : "#f73a21";
+    let btnClr = obj ? IMG_MAP.get(code)[timeOfDay] : "#f73a21";
 
-      console.log(getImageUrl(timeOfDay, code), code, btnClr, IMG_MAP.get(code));
-      document.body.style.backgroundImage = `url(${imgSrc})`;
-      if (btnRef.current) {
-        btnRef.current.style.background = btnClr;
-      }
+    document.body.style.backgroundImage = `url(${imgSrc})`;
+    if (btnRef.current) {
+      btnRef.current.style.background = btnClr;
     }
   }, [cityTitle, weatherData, btnRef.current]);
 
