@@ -4,7 +4,7 @@ A project designed to provide users with up-to-date weather information for any 
 
 ## _End Result_
 
-[the-Weather-app](https://weatherapp-ashen-six.vercel.app)
+Link: [the-Weather-app](https://weatherapp-johnny-dev.vercel.app)
 
 ## Getting Started
 
